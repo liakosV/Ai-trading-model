@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-trading-model"
+version = "0.1.0"
+description = "Local research on daily US equity market data"
+requires-python = ">=3.12"
+dependencies = ["alpaca-py>=0.40,<1", "pandas>=2.2,<3", "pyarrow>=17", "exchange-calendars>=4.6,<5", "matplotlib>=3.9"]
+
+[project.scripts]
+collect-bars = "trading_bot.collect:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.9,<1"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--import-mode=importlib"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
