@@ -1,0 +1,35 @@
+AGENTS.md
+
+# Local Python environment and generated files
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+/build/
+/dist/
+
+# Test, lint, and notebook caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# Local credentials and environment overrides
+.env
+.env.*
+!.env.example
+.aws/
+
+# Downloaded datasets, generated models, and experiment output
+/data/
+/artifacts/
+/logs/
+*.log
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite3-wal
+*.sqlite3-shm
